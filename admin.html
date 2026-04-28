@@ -221,7 +221,7 @@
       reader.onload=function(e){ try{ const data=JSON.parse(e.target.result); if(!Array.isArray(data.productos)||!Array.isArray(data.historial)) throw new Error("Formato inválido"); productos=data.productos; historial=data.historial; ventas=Array.isArray(data.ventas)?data.ventas:[]; guardarLocal(); actualizarTodo(); alert("Respaldo importado correctamente."); } catch(err){ alert("No se pudo importar el archivo."); } };
       reader.readAsText(file); event.target.value="";
     }
-    function cerrarSesion(){ localStorage.removeItem(KEY_ROL); window.location.href="login.html"; }
+    function cerrarSesion(){ localStorage.removeItem(KEY_ROL); window.location.href="index.html"; }
     function actualizarTodo(){ actualizarResumen(); actualizarCategoriasFiltro(); renderProductos(); renderStockBajo(); renderResumenDiario(); renderHistorial(); }
     document.getElementById("modalEditar").addEventListener("click", e => { if(e.target.id==="modalEditar") cerrarModal(); });
     actualizarTodo();
